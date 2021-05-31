@@ -7,6 +7,8 @@
         <div class="col">
             <h1>list product</h1>
 
+            <a class="btn btn-sm btn-success mt-2 mb-5" href="/product/add"> Tambah Data</a>
+
             <div class="container">
 
                 <table class="table table-striped">
@@ -24,8 +26,8 @@
                             <td><?= $p['nama_produk']; ?></td>
                             <td><?= $p['deskripsi_produk']; ?></td>
                             <td>
-                                <a href="" class="btn btn-warning">Edit</a>
-                                <a href="" class="btn btn-danger">Delete</a>
+                                <a href="/product/edit/<?= $p['id_produk']; ?>" class="btn btn-warning">Edit</a>
+                                <a href="/product/delete/<?= $p['id_produk']; ?>" class="btn btn-danger">Delete</a>
 
                             </td>
                         </tr>

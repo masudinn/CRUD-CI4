@@ -19,4 +19,13 @@ class Product extends BaseController
         ];
         return view('pages/v_product', $data);
     }
+
+    public function add()
+    {
+        $data = [
+            'title' => 'Product',
+            'product' => $this->M_product->getProduct()
+        ];
+        return view('pages/v_product', $data);
+    }
 }

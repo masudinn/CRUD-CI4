@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1>View Siswa</h1>
+            <h1>View Home Siswa</h1>
         </div>
     </div>
 </div>

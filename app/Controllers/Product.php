@@ -23,9 +23,19 @@ class Product extends BaseController
     public function add()
     {
         $data = [
-            'title' => 'Product',
-            'product' => $this->M_product->getProduct()
+            'title' => 'Form Product'
         ];
-        return view('pages/v_product', $data);
+        return view('pages/v_add', $data);
+    }
+
+    public function save()
+    {
+        $data = [
+            'nama_produk' => $this->request->getPost('nama_produk'),
+            'deskripsi_produk' => $this->request->getPost('nama_produk')
+        ];
+        $this->M_product->insertProduct($data);
+        session()->setFlashData('success', 'Data masuk');
+        return redirect()->to('/product');
     }
 }

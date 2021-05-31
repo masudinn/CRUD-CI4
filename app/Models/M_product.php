@@ -11,4 +11,9 @@ class M_product extends Model
     {
         return $this->db->table('tb_product')->get()->getResultArray();
     }
+
+    public function insertProduct($data)
+    {
+        return $this->db->table('tb_product')->insert($data);
+    }
 }

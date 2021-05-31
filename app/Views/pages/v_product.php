@@ -7,6 +7,14 @@
         <div class="col">
             <h1>list product</h1>
 
+            <?php
+            if (!empty(session()->getflashdata('success'))) { ?>
+                <div class="alert alert-success">
+                    <?= session()->getflashdata('success'); ?>
+                </div>
+            <?php }
+            ?>
+
             <a class="btn btn-sm btn-success mt-2 mb-5" href="/product/add"> Tambah Data</a>
 
             <div class="container">

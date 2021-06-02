@@ -35,7 +35,7 @@
                             <td><?= $p['deskripsi_produk']; ?></td>
                             <td>
                                 <a href="/product/edit/<?= $p['id_produk']; ?>" class="btn btn-warning">Edit</a>
-                                <a href="/product/delete/<?= $p['id_produk']; ?>" class="btn btn-danger">Delete</a>
+                                <a href="/product/delete/<?= $p['id_produk']; ?>" class="btn btn-danger " onclick="return confirm ('Apakah ingin menghapus data tersebut?' )">Delete</a>
 
                             </td>
                         </tr>

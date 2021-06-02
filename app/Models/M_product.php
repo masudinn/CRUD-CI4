@@ -24,4 +24,8 @@ class M_product extends Model
     {
         return $this->db->table('tb_product')->update($data, array('id_produk' => $id_produk));
     }
+    public function deleteProduct($id_produk)
+    {
+        return $this->db->table('tb_product')->delete(array('id_produk' => $id_produk));
+    }
 }

@@ -57,4 +57,11 @@ class Product extends BaseController
         session()->setflashdata('success', 'Data berubah');
         return redirect()->to('/product');
     }
+
+    public function delete($id_produk)
+    {
+        $this->M_product->deleteProduct($id_produk);
+        session()->setflashdata('success', 'Data ke hapus');
+        return redirect()->to('/product');
+    }
 }

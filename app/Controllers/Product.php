@@ -23,7 +23,7 @@ class Product extends BaseController
     public function add()
     {
         $data = [
-            'title' => 'Form Product'
+            'title' => 'Form Add Product'
         ];
         return view('pages/v_add', $data);
     }
@@ -42,9 +42,19 @@ class Product extends BaseController
     public function edit($id_produk)
     {
         $data = [
-            'title' => 'Form Product',
+            'title' => 'Form Edit Product',
             'product' => $this->M_product->editProduct($id_produk)
         ];
         return view('pages/v_edit', $data);
+    }
+    public function editData($id_produk)
+    {
+        $data = [
+            'nama_produk' => $this->request->getPost('nama_produk'),
+            'deskripsi_produk' => $this->request->getPost('deskripsi_produk')
+        ];
+        $this->M_product->updateProduct($data, $id_produk);
+        session()->setflashdata('success', 'Data berubah');
+        return redirect()->to('/product');
     }
 }

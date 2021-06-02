@@ -20,4 +20,8 @@ class M_product extends Model
     {
         return $this->db->table('tb_product')->where('id_produk', $id_produk)->get()->getRowArray();
     }
+    public function updateProduct($data, $id_produk)
+    {
+        return $this->db->table('tb_product')->update($data, array('id_produk' => $id_produk));
+    }
 }

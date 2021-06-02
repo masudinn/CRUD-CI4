@@ -38,4 +38,13 @@ class Product extends BaseController
         session()->setflashdata('success', 'Data masuk');
         return redirect()->to('/product');
     }
+
+    public function edit($id_produk)
+    {
+        $data = [
+            'title' => 'Form Product',
+            'product' => $this->M_product->editProduct($id_produk)
+        ];
+        return view('pages/v_edit', $data);
+    }
 }

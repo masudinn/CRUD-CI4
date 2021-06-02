@@ -16,4 +16,8 @@ class M_product extends Model
     {
         return $this->db->table('tb_product')->insert($data);
     }
+    public function editProduct($id_produk)
+    {
+        return $this->db->table('tb_product')->where('id_produk', $id_produk)->get()->getRowArray();
+    }
 }
